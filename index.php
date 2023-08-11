@@ -54,7 +54,7 @@ error_reporting(E_ERROR | E_PARSE);
                         <div class="col-lg-12">
                             <h1>MUSIC</h1>
                             <h2>EMPORIUM</h2>
-                            <a href="#" class="primary-btn">See More</a>
+                            <a href="contact.php" class="primary-btn">See More</a>
                         </div>
                     </div>
                 </div>
@@ -63,9 +63,9 @@ error_reporting(E_ERROR | E_PARSE);
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1>2019</h1>
-                            <h2>Lookbook.</h2>
-                            <a href="#" class="primary-btn">See More</a>
+                            <h1>MUSIC</h1>
+                            <h2>EMPORIUM</h2>
+                            <a href="contact.php" class="primary-btn">See More</a>
                         </div>
                     </div>
                 </div>
@@ -74,9 +74,9 @@ error_reporting(E_ERROR | E_PARSE);
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1>2019</h1>
-                            <h2>Lookbook.</h2>
-                            <a href="#" class="primary-btn">See More</a>
+                            <h1>MUSIC</h1>
+                            <h2>EMPORIUM</h2>
+                            <a href="contact.php" class="primary-btn">See More</a>
                         </div>
                     </div>
                 </div>
@@ -94,71 +94,27 @@ error_reporting(E_ERROR | E_PARSE);
                         <div class="single-features-ads first">
                             <img src="img/icons/f-delivery.png" alt="">
                             <h4>Free shipping</h4>
-                            <p>Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vesti bulum mal
-                                esuada aliquet libero viverra cursus. </p>
+                            <p>We are providing you home delivery so you won't have to worry about your things.</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="single-features-ads second">
                             <img src="img/icons/coin.png" alt="">
-                            <h4>100% Money back </h4>
-                            <p>Urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vesti bulum mal esuada
-                                aliquet libero viverra cursus. </p>
+                            <h4>Quick Refund</h4>
+                            <p>You can get refund as soon as possible. Our team is always ready to help you. </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="single-features-ads">
                             <img src="img/icons/chat.png" alt="">
                             <h4>Online support 24/7</h4>
-                            <p>Urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vesti bulum mal esuada
-                                aliquet libero viverra cursus. </p>
+                            <p>We provide you support 24*7 so you can get answer of your queries faster. </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Features Box -->
-        <div class="features-box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="single-box-item first-box">
-                                    <img src="img/f-box-1.jpg" alt="">
-                                    <div class="box-text">
-                                        <span class="trend-year">2019 Party</span>
-                                        <h2>Jewelry</h2>
-                                        <span class="trend-alert">Trend Allert</span>
-                                        <a href="#" class="primary-btn">See More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single-box-item second-box">
-                                    <img src="img/f-box-2.jpg" alt="">
-                                    <div class="box-text">
-                                        <span class="trend-year">2019 Trend</span>
-                                        <h2>Footwear</h2>
-                                        <span class="trend-alert">Bold & Black</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="single-box-item large-box">
-                            <img src="img/f-box-3.jpg" alt="">
-                            <div class="box-text">
-                                <span class="trend-year">2019 Party</span>
-                                <h2>Collection</h2>
-                                <div class="trend-alert">Trend Allert</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- Features Section End -->
 
@@ -178,6 +134,8 @@ error_reporting(E_ERROR | E_PARSE);
                             $qry = "SELECT * FROM category";
                             $res = mysqli_query($conn, $qry);
                             while ($row = mysqli_fetch_row($res)) {
+
+
                             ?>
                                 <li data-filter=".<?php echo $row[1] ?>"><?php echo $row[1] ?></li>
                             <?php
@@ -193,125 +151,78 @@ error_reporting(E_ERROR | E_PARSE);
                 include("include/config.php");
                 $qry = "SELECT * FROM product WHERE categoryid=1";
                 $res = mysqli_query($conn, $qry);
-                while ($row = mysqli_fetch_row($res)) {
+                $row = mysqli_fetch_row($res)
                 ?>
-                    <div class="col-lg-3 col-sm-6 mix all BOWED-STRINGS">
-                        <div class="single-product-item">
-                            <figure>
-                                <a href="product-page.php?productid=<?php echo $row[0] ?>"><img src="image/product/<?php echo $row[2] ?>" alt=""></a>
-                            </figure>
-                            <div class="product-text">
-                               
-                            <h6><?php echo $row[1]?></h6>
-                                <p><?php echo $row[3] ?></p>
-                            </div>
+                <div class="col-lg-3 col-sm-6 mix all BOWED-STRINGS">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="product-page.php?productid=<?php echo $row[0] ?>"><img src="image/product/<?php echo $row[2] ?>" style="object-fit: contain; height: 250px; width: 250px;" alt=""></a>
+                        </figure>
+                        <div class="product-text">
+
+                            <h6><?php echo $row[1] ?></h6>
+                            <p><?php echo number_format($row[3]) ?>₹</p>
                         </div>
                     </div>
-                <?php
-                }
-                ?>
+                </div>
                 <?php
                 include("include/config.php");
                 $qry = "SELECT * FROM product WHERE categoryid=2";
                 $res = mysqli_query($conn, $qry);
-                while ($row = mysqli_fetch_row($res)) {
+                $row = mysqli_fetch_row($res)
                 ?>
-                    <div class="col-lg-3 col-sm-6 mix all WOODWIND">
-                        <div class="single-product-item">
-                            <figure>
-                            <a href="product-page.php?productid=<?php echo $row[0] ?>"><img src="image/product/<?php echo $row[2] ?>" alt=""></a>
-                            </figure>
-                            <div class="product-text">
-                                <h6><?php echo $row[1]?></h6>
-                                <p><?php echo $row[3] ?></p>
-                            </div>
+                <div class="col-lg-3 col-sm-6 mix all WOODWIND">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="product-page.php?productid=<?php echo $row[0] ?>"><img src="image/product/<?php echo $row[2] ?>" style="object-fit: contain; height: 250px; width: 250px;" alt=""></a>
+                        </figure>
+                        <div class="product-text">
+                            <h6><?php echo $row[1] ?></h6>
+                            <p><?php echo number_format($row[3]) ?>₹</p>
                         </div>
                     </div>
-                <?php
-                }
-                ?>
+                </div>
                 <?php
                 include("include/config.php");
                 $qry = "SELECT * FROM product WHERE categoryid=3";
                 $res = mysqli_query($conn, $qry);
-                while ($row = mysqli_fetch_row($res)) {
+                $row = mysqli_fetch_row($res)
                 ?>
-                    <div class="col-lg-3 col-sm-6 mix all KEYBOARD">
-                        <div class="single-product-item">
-                            <figure>
-                            <a href="product-page.php?productid=<?php echo $row[0] ?>"><img src="image/product/<?php echo $row[2] ?>" alt=""></a>
-                            </figure>
-                            <div class="product-text">
-                              
-                            <h6><?php echo $row[1]?></h6>
-                                <p><?php echo $row[3] ?></p>
-                            </div>
+                <div class="col-lg-3 col-sm-6 mix all KEYBOARD">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="product-page.php?productid=<?php echo $row[0] ?>"><img src="image/product/<?php echo $row[2] ?>" style="object-fit: contain; height: 250px; width: 250px;" alt=""></a>
+                        </figure>
+                        <div class="product-text">
+
+                            <h6><?php echo $row[1] ?></h6>
+                            <p><?php echo number_format($row[3]) ?>₹</p>
                         </div>
                     </div>
-                <?php
-                }
-                ?>
+                </div>
                 <?php
                 include("include/config.php");
                 $qry = "SELECT * FROM product WHERE categoryid=4";
                 $res = mysqli_query($conn, $qry);
-                while ($row = mysqli_fetch_row($res)) {
+                $row = mysqli_fetch_row($res)
                 ?>
-                    <div class="col-lg-3 col-sm-6 mix all GUITAR-FAMILY">
-                        <div class="single-product-item">
-                            <figure>
-                            <a href="product-page.php?productid=<?php echo $row[0] ?>"><img src="image/product/<?php echo $row[2] ?>" alt=""></a>
-                            </figure>
-                            <div class="product-text">
-                               
-                            <h6><?php echo $row[1]?></h6>
-                                <p><?php echo $row[3] ?></p>
-                            </div>
+                <div class="col-lg-3 col-sm-6 mix all GUITAR-FAMILY">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="product-page.php?productid=<?php echo $row[0] ?>"><img src="image/product/<?php echo $row[2] ?>" style="object-fit: contain; height: 250px; width: 250px;" alt=""></a>
+                        </figure>
+                        <div class="product-text">
+                            <h6><?php echo $row[1] ?></h6>
+                            <p><?php echo number_format($row[3]) ?>₹</p>
                         </div>
                     </div>
+                </div>
                 <?php
-                }
+
                 ?>
             </div>
         </div>
     </section>
-    <!-- Latest Product End -->
-
-    <!-- Lookbok Section Begin -->
-    <section class="lookbok-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-1">
-                    <div class="lookbok-left">
-                        <div class="section-title">
-                            <h2>2019 <br />#lookbook</h2>
-                        </div>
-                        <p>Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vestibulum malesuada
-                            aliquet libero viverra cursus. Aliquam erat volutpat. Morbi id dictum quam, ut commodo
-                            lorem. In at nisi nec arcu porttitor aliquet vitae at dui. Sed sollicitudin nulla non leo
-                            viverra scelerisque. Phasellus facilisis lobortis metus, sit amet viverra lectus finibus ac.
-                            Aenean non felis dapibus, placerat libero auctor, ornare ante. Morbi quis ex eleifend,
-                            sodales nulla vitae, scelerisque ante. Nunc id vulputate dui. Suspendisse consectetur rutrum
-                            metus nec scelerisque. s</p>
-                        <a href="#" class="primary-btn look-btn">See More</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="lookbok-pic">
-                        <img src="img/lookbok.jpg" alt="">
-                        <div class="pic-text">fashion</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Lookbok Section End -->
-
-    <!-- Logo Section Begin -->
-
-    <!-- Logo Section End -->
-
-    <!-- Footer Section Begin -->
     <?php
     include_once("./common/footer.php");
     include_once("./common/script.php");

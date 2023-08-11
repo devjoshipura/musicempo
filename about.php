@@ -51,7 +51,7 @@ error_reporting(E_ERROR | E_PARSE);
             <div class="row" style="justify-content: center;">
                 <div class="col-lg-4">
                     <div class="page-breadcrumb">
-                        <h2>Contact us<span>.</span></h2>
+                        <h2>About us<span>.</span></h2>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2023 at 01:09 PM
+-- Generation Time: Aug 11, 2023 at 03:45 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project`
+-- Database: `dev`
 --
 
 -- --------------------------------------------------------
@@ -62,6 +62,20 @@ INSERT INTO `category` (`ID`, `categoryname`, `image`) VALUES
 (2, 'WOODWIND', '1691588634-WhatsApp Image 2023-08-09 at 4.54.40 PM.jpeg'),
 (3, 'KEYBOARD ', '1691588643-WhatsApp Image 2023-08-09 at 4.54.40 PM.jpeg'),
 (4, 'GUITAR-FAMILY', '1691588650-WhatsApp Image 2023-08-09 at 4.54.40 PM.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `ID` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `subject` varchar(500) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -143,6 +157,12 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -169,6 +189,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `category`
   MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`

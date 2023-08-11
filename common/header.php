@@ -5,12 +5,13 @@ session_start();
     <div class="container-fluid">
         <div class="inner-header">
             <div class="logo">
-                <a href="./index.php"><img src="img/logo.png" alt=""></a>
+                <a href="./index.php"><img src="./img/logo2.png" alt=""></a>
             </div>
             <div class="header-right">
                 <img src="img/icons/man.png" alt="">
                 <a href="#">
-                    <img src="img/icons/bag.png" alt="">
+                    <img src="img/icons/bag.png
+                    " alt="">
                     <span>2</span>
                 </a>
             </div>
@@ -42,15 +43,14 @@ session_start();
                             $res = mysqli_query($conn, $qry);
                             while ($row = mysqli_fetch_row($res)) {
                             ?>
-                                <li><a href="<?php echo $row[1] ?>.php"><?php echo $row[1] ?></a></li>
+                                <li><a href="categories.php?id=<?php echo $row[0] ?>"><?php echo $row[1] ?></a></li>
                             <?php
                             }
                             ?>
                         </ul>
                     </li>
-                    <li><a href="./contact.php">About</a></li>
-                    <li><a href="./index.php">Blog</a></li>
                     <li><a href="./contact.php" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/violet-master/contact.php' ? "active" : '') ?>">Contact</a></li>
+                    <li><a href="./about.php">About</a></li>
                 </ul>
             </nav>
         </div>

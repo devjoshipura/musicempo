@@ -20,29 +20,29 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
-    
+
     <!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">+</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
-		</div>
-	</div>
-	<!-- Search model end -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
 
     <!-- Header Section Begin -->
-    <?php 
-        include_once("./common/header.php");
-   ?>
+    <?php
+    include_once("./common/header.php");
+    ?>
     <!-- Header Info Begin -->
-  
+
     <!-- Header Info End -->
     <!-- Header End -->
 
     <!-- Page Add Section Begin -->
-    <section class="page-add">
+    <!-- <section class="page-add">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -58,65 +58,52 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Page Add Section End -->
 
     <!-- Product Page Section Beign -->
-    <section class="product-page">
+    <section class="product-page" style="margin-bottom: 150px;">
         <div class="container">
-            <div class="product-control">
+            <!-- <div class="product-control">
                 <a href="#">Previous</a>
                 <a href="#">Next</a>
-            </div>
+            </div> -->
             <div class="row">
+                <?php
+                include("./include/config.php");
+                $qry = "SELECT * FROM product WHERE id='" . $_REQUEST['productid'] . "'";
+                $res = mysqli_query($conn, $qry);
+                $row = mysqli_fetch_assoc($res);
+                ?>
                 <div class="col-lg-6">
                     <div class="product-slider owl-carousel">
                         <div class="product-img">
                             <figure>
-                                <img src="img/product/product-1.jpg" alt="">
-                                <div class="p-status">new</div>
-                            </figure>
-                        </div>
-                        <div class="product-img">
-                            <figure>
-                                <img src="img/product/product-1.jpg" alt="">
-                                <div class="p-status">new</div>
+                                <img src="./image/product/<?php echo $row['productimage'] ?>" style="object-fit: contain;" alt="">
                             </figure>
                         </div>
                     </div>
-                    
                 </div>
                 <div class="col-lg-6">
                     <div class="product-content">
-                        <h2>Dotted Blue Shirt</h2>
+                        <h2><?php echo $row['productname'] ?></h2>
                         <div class="pc-meta">
-                            <h5>$22.90</h5>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
+                            <h5><?php echo number_format($row['productprice']) ?>₹</h5>
+
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p><?php echo $row['productdesc'] ?></p>
                         <ul class="tags">
-                            <li><span>Category :</span> Men’s Wear</li>
-                            <li><span>Tags :</span> man, shirt, dotted, elegant, cool</li>
+                            <li><span>Category :</span> <?php
+                                                        $subqry = "SELECT * FROM category WHERE ID='" . $row['categoryid'] . "'";
+                                                        $subres = mysqli_query($conn, $subqry);
+                                                        $subrow = mysqli_fetch_array($subres);
+                                                        echo $subrow[1];
+                                                        ?></li>
                         </ul>
-                        <div class="product-quantity">
-                            <div class="pro-qty">
-                                <input type="text" value="1">
-                            </div>
-                        </div>
+                        
                         <a href="#" class="primary-btn pc-btn">Add to cart</a>
-                        <ul class="p-info">
-                            <li>Product Information</li>
-                            <li>Reviews</li>
-                            <li>Product Care</li>
-                        </ul>
+                        <a href="#" class="primary-btn pc-btn">Buy Now</a>
+
                     </div>
                 </div>
             </div>
@@ -125,7 +112,7 @@
     <!-- Product Page Section End -->
 
     <!-- Related Product Section Begin -->
-    <section class="related-product spad">
+    <!-- <section class="related-product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -185,18 +172,18 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Related Product Section End -->
 
     <!-- Footer Section Begin -->
-    <?php 
-        include_once("./common/footer.php");
-        include_once("./common/script.php");
-   ?>
+    <?php
+    include_once("./common/footer.php");
+    include_once("./common/script.php");
+    ?>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    
+
 </body>
 
 </html>
