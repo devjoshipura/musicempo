@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2023 at 04:02 PM
+-- Generation Time: Aug 11, 2023 at 01:09 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -83,10 +83,26 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `productname`, `productimage`, `productprice`, `productdesc`, `categoryid`) VALUES
-(14, 'product 1', '1691588890-WhatsApp Image 2023-08-09 at 4.51.09 PM.jpeg', 500, 'aaaa', 1),
-(15, 'product 2', '1691588909-WhatsApp Image 2023-08-09 at 4.51.09 PM.jpeg', 500, 'aaaa', 2),
-(16, 'product 3', '1691588924-WhatsApp Image 2023-08-09 at 4.51.09 PM.jpeg', 5000, 'aaaa', 3),
-(17, 'product 4', '1691588939-WhatsApp Image 2023-08-09 at 4.51.09 PM.jpeg', 500, 'aaaa', 4);
+(18, 'Violin', '1691674679-WhatsApp Image 2023-08-05 at 4.01.36 PM (1).jpeg', 6000, 'this is violin', 1),
+(19, 'Kamancha', '1691674803-WhatsApp Image 2023-08-05 at 4.02.29 PM.jpeg', 4000, 'this is kamancha', 1),
+(20, 'Banjo', '1691674865-WhatsApp Image 2023-08-10 at 6.11.33 PM.jpeg', 5000, 'this is banjo', 1),
+(21, 'Gambusi ndogo', '1691675211-STL-X2BW-4.jpg', 4500, 'this is gambusi ndogo', 1),
+(22, 'Kinubi', '1691675270-WhatsApp Image 2023-08-10 at 6.17.09 PM.jpeg', 8000, 'this is kinubi', 1),
+(23, 'Clarinet', '1691675355-WhatsApp Image 2023-08-05 at 4.27.39 PM.jpeg', 3000, 'this is clarinet', 2),
+(24, 'Saxophone', '1691675410-WhatsApp Image 2023-08-05 at 4.28.49 PM.jpeg', 2500, 'this is saxophone', 2),
+(25, 'Basson', '1691675451-WhatsApp Image 2023-08-05 at 4.30.35 PM.jpeg', 3500, 'this is Basson', 2),
+(26, 'Shawm', '1691675524-WhatsApp Image 2023-08-05 at 4.33.32 PM.jpeg', 1999, 'this is shawm', 2),
+(27, 'flute', '1691675573-WhatsApp Image 2023-08-05 at 4.34.53 PM.jpeg', 2500, 'this is flute', 2),
+(28, 'Piano', '1691675624-WhatsApp Image 2023-08-10 at 6.19.28 PM.jpeg', 10000, 'this is Piano', 3),
+(29, 'Accordion', '1691675661-WhatsApp Image 2023-08-10 at 6.22.43 PM (1).jpeg', 5600, 'this is Accordion', 3),
+(30, 'Hurdy-gurdy', '1691675704-WhatsApp Image 2023-08-10 at 6.22.43 PM.jpeg', 6300, 'this is Hurdy-gurdy', 3),
+(31, 'Melodica', '1691675740-Suzuki-Melodion-Alto-Study-32---Black-a-p.w695.h523.backdrop.webp', 7000, 'this is Melodica', 3),
+(32, 'Concertina', '1691675792-WhatsApp Image 2023-08-10 at 6.25.01 PM.jpeg', 5499, 'this is Concertina', 3),
+(33, 'Base Guitar', '1691675855-WhatsApp Image 2023-08-10 at 6.26.32 PM.jpeg', 7699, 'this is Base Guitar', 4),
+(34, 'Electric guitar', '1691675900-WhatsApp Image 2023-08-10 at 6.28.05 PM.jpeg', 4999, 'this is Electric guitar', 4),
+(35, 'Classical guitar', '1691675939-WhatsApp Image 2023-08-10 at 6.30.29 PM.jpeg', 8999, 'this is Classical guitar', 4),
+(36, '12 level string Guitar', '1691675994-2a19a7a1b06d4eca8ec2739825798d97.jpeg', 9999, 'this is 12 level string Guitar', 4),
+(37, 'Harp guitar', '1691676020-WhatsApp Image 2023-08-10 at 6.34.30 PM.jpeg', 11000, 'this is Harp guitar', 4);
 
 -- --------------------------------------------------------
 
@@ -107,7 +123,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `name`, `email`, `password`) VALUES
 (1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
-(4, 'dev', 'dev@gmail.com', 'e77989ed21758e78331b20e477fc5582');
+(4, 'dev', 'dev@gmail.com', 'e77989ed21758e78331b20e477fc5582'),
+(5, 'Furniture Arena', 'aditi@gmail.com', '2b197829d548512d1d4b8bd5c773d6c3');
 
 --
 -- Indexes for dumped tables
@@ -157,13 +174,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
