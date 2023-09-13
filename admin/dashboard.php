@@ -18,10 +18,10 @@ if (!isset($_SESSION['email'])) {
 
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
-             <!-- Preloader -->
-             <div class="preloader flex-column justify-content-center align-items-center">
+            <!-- Preloader -->
+            <div class="preloader flex-column justify-content-center align-items-center">
                 <img class="animation__shake" src="dist\img\logo.png" style="border-radius: 50%;" alt="AdminLTELogo" height="100" width="100">
-             </div>
+            </div>
 
             <?php
             include('./common/menu.php')
@@ -52,13 +52,13 @@ if (!isset($_SESSION['email'])) {
                             <div class="col-lg-6 col-6">
                                 <div class="small-box bg-info">
                                     <div class="inner">
-                                        <?php 
-                                            include_once("./include/config.php");
-                                            $qry="SELECT * FROM category";
-                                            $res=mysqli_query($conn,$qry);
-                                            $count=mysqli_num_rows($res);
+                                        <?php
+                                        include_once("./include/config.php");
+                                        $qry = "SELECT * FROM category";
+                                        $res = mysqli_query($conn, $qry);
+                                        $count = mysqli_num_rows($res);
                                         ?>
-                                        <h3><?php echo $count;?></h3>
+                                        <h3><?php echo $count; ?></h3>
 
                                         <p>Category</p>
                                     </div>
@@ -71,13 +71,13 @@ if (!isset($_SESSION['email'])) {
                             <div class="col-lg-6 col-6">
                                 <div class="small-box bg-success">
                                     <div class="inner">
-                                    <?php 
-                                            include_once("./include/config.php");
-                                            $qry="SELECT * FROM product";
-                                            $res=mysqli_query($conn,$qry);
-                                            $count=mysqli_num_rows($res);
+                                        <?php
+                                        include_once("./include/config.php");
+                                        $qry = "SELECT * FROM product";
+                                        $res = mysqli_query($conn, $qry);
+                                        $count = mysqli_num_rows($res);
                                         ?>
-                                        <h3><?php echo $count?></h3>
+                                        <h3><?php echo $count ?></h3>
 
                                         <p>Product</p>
                                     </div>
@@ -87,10 +87,11 @@ if (!isset($_SESSION['email'])) {
                                     <a href="product.php  " class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-6 col-6">
                                 <div class="small-box bg-warning">
                                     <div class="inner">
+
                                         <h3>0</h3>
 
                                         <p>Orders</p>
@@ -98,20 +99,27 @@ if (!isset($_SESSION['email'])) {
                                     <div class="icon">
                                         <i class="ion ion-person-add"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="order.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-6">
                                 <div class="small-box bg-danger">
                                     <div class="inner">
-                                        <h3>65</h3>
+                                    <?php
+                                        include_once("./include/config.php");
+                                        $qry = "SELECT * FROM contact";
+                                        $res = mysqli_query($conn, $qry);
+                                        $count = mysqli_num_rows($res);
+                                        ?>
+                                        <h3><?php echo $count ?></h3>
 
-                                        <p>Unique Visitors</p>
+
+                                        <p>Complains</p>
                                     </div>
                                     <div class="icon">
                                         <i class="ion ion-pie-graph"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="complain.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
