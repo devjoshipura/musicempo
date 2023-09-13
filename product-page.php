@@ -89,7 +89,6 @@
                         <h2><?php echo $row['productname'] ?></h2>
                         <div class="pc-meta">
                             <h5><?php echo number_format($row['productprice']) ?>₹</h5>
-
                         </div>
                         <p><?php echo $row['productdesc'] ?></p>
                         <ul class="tags">
@@ -100,90 +99,17 @@
                                                         echo $subrow[1];
                                                         ?></li>
                         </ul>
-                        
-                        <a href="#" class="primary-btn pc-btn">Add to cart</a>
+                        <a href="addtocart.php?prodid=<?php echo $row['id'] ?>" class="primary-btn pc-btn">Add to cart</a>
                         <a href="#" class="primary-btn pc-btn">Buy Now</a>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Product Page Section End -->
-
-    <!-- Related Product Section Begin -->
-    <!-- <section class="related-product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-title">
-                        <h2>Related Products</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product-item">
-                        <figure>
-                            <a href="#"><img src="img/products/img-1.jpg" alt=""></a>
-                            <div class="p-status">new</div>
-                        </figure>
-                        <div class="product-text">
-                            <h6>Green Dress with details</h6>
-                            <p>$22.90</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product-item">
-                        <figure>
-                            <a href="#"><img src="img/products/img-2.jpg" alt=""></a>
-                            <div class="p-status sale">sale</div>
-                        </figure>
-                        <div class="product-text">
-                            <h6>Yellow Maxi Dress</h6>
-                            <p>$25.90</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product-item">
-                        <figure>
-                            <a href="#"><img src="img/products/img-3.jpg" alt=""></a>
-                            <div class="p-status">new</div>
-                        </figure>
-                        <div class="product-text">
-                            <h6>One piece bodysuit</h6>
-                            <p>$19.90</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product-item">
-                        <figure>
-                            <a href="#"><img src="img/products/img-4.jpg" alt=""></a>
-                            <div class="p-status popular">popular</div>
-                        </figure>
-                        <div class="product-text">
-                            <h6>Blue Dress with details</h6>
-                            <p>$35.50</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Related Product Section End -->
-
-    <!-- Footer Section Begin -->
     <?php
     include_once("./common/footer.php");
     include_once("./common/script.php");
     ?>
-    <!-- Footer Section End -->
-
-    <!-- Js Plugins -->
-
 </body>
 
 </html>

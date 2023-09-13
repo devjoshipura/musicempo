@@ -2,7 +2,6 @@
 session_start();
 include("include/config.php");
 extract($_POST);
-print_r($_POST);
 
 $qry="SELECT * FROM user WHERE email='".$email."'AND password='".md5($password)."'";
 $res=mysqli_query($conn,$qry);

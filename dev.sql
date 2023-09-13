@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2023 at 03:45 PM
+-- Generation Time: Sep 13, 2023 at 03:31 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -44,6 +44,26 @@ INSERT INTO `admin` (`ID`, `name`, `email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `ID` int(11) NOT NULL,
+  `productid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`ID`, `productid`, `userid`, `quantity`) VALUES
+(3, 25, 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `category`
 --
 
@@ -76,6 +96,30 @@ CREATE TABLE `contact` (
   `subject` varchar(500) NOT NULL,
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `ID` int(20) NOT NULL,
+  `cartid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `productid` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `address` varchar(500) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`ID`, `cartid`, `userid`, `productid`, `quantity`, `date`, `address`, `status`) VALUES
+(13, 3, 1, 25, 1, '2023-09-13 01:22:43', 'home', 'active');
 
 -- --------------------------------------------------------
 
@@ -151,6 +195,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
@@ -160,6 +210,12 @@ ALTER TABLE `category`
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -185,6 +241,12 @@ ALTER TABLE `admin`
   MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
@@ -195,6 +257,12 @@ ALTER TABLE `category`
 --
 ALTER TABLE `contact`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `product`

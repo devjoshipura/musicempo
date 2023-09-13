@@ -134,8 +134,6 @@ error_reporting(E_ERROR | E_PARSE);
                             $qry = "SELECT * FROM category";
                             $res = mysqli_query($conn, $qry);
                             while ($row = mysqli_fetch_row($res)) {
-
-
                             ?>
                                 <li data-filter=".<?php echo $row[1] ?>"><?php echo $row[1] ?></li>
                             <?php
