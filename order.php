@@ -8,57 +8,98 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/order.css">
+    <?php
+    include("./common/style.php")
+    ?>
+
+
 </head>
 
 <body>
-    <div class="container">
-        <article class="card">
-            <header class="card-header"> My Orders / Tracking </header>
-            <div class="card-body">
-                <h6>Order ID: OD45345345435</h6>
-                <article class="card">
-                    <div class="card-body row">
-                        <div class="col"> <strong>Estimated Delivery time:</strong> <br>29 nov 2019 </div>
-                        <div class="col"> <strong>Shipping BY:</strong> <br> BLUEDART, | <i class="fa fa-phone"></i> +1598675986 </div>
-                        <div class="col"> <strong>Status:</strong> <br> Picked by the courier </div>
-                        <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div>
+    <?php
+    include("./common/header.php");
+    $p=0;
+    ?>
+    <section class="h-100 gradient-custom" style="margin-bottom: 280px;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="card" style="border-radius: 10px;">
+                        <div class="card-header px-4 py-5">
+                            <h5 class="text-muted mb-0">Thanks for your Order<span style="color: #a8729a;"></span>!</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <p class="lead fw-normal mb-0" style="color: #a8729a;">Receipt</p>
+                                <p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p>
+                            </div>
+                            <?php
+                            include("./include/config.php");
+                            $qry = "SELECT * FROM orders WHERE status='active' AND userid='" . $_SESSION['loginid'] . "'";
+                            $res = mysqli_query($conn, $qry);
+                            while ($row = mysqli_fetch_assoc($res)) {
+                                $subqry = "SELECT * FROM product WHERE id='" . $row['productid'] . "'";
+                                $subres = mysqli_query($conn, $subqry);
+                                $subrow = mysqli_fetch_assoc($subres);
+                            ?>
+                                <div class="card shadow-0 border mb-4">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <img src="./image/product/<?php echo $subrow['productimage'] ?>" class="img-fluid" alt="Phone">
+                                            </div>
+                                            <div class="col-md-3 text-center d-flex justify-content-center align-items-center">
+                                                <p class="text-muted mb-0"><?php echo $subrow['productname'] ?></p>
+                                            </div>
+                                            <div class="col-md-3 text-center d-flex justify-content-center align-items-center">
+                                                <p class="text-muted mb-0 small">Qty: <?php echo $row['quantity'] ?></p>
+                                            </div>
+                                            <div class="col-md-3 text-center d-flex justify-content-center align-items-center">
+                                                <p class="text-muted mb-0 small"><?php echo number_format($subrow['productprice']) ?>₹</p>
+                                            </div>
+                                        </div>
+                                        <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-2">
+                                                <p class="text-muted mb-0 small">Track Order</p>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="progress" style="height: 6px; border-radius: 16px;">
+                                                    <div class="progress-bar" role="progressbar" style="width: 65%; border-radius: 16px; background-color: #a8729a;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <div class="d-flex justify-content-around mb-1">
+                                                    <p class="text-muted mt-1 mb-0 small ms-xl-5">Out for delivary</p>
+                                                    <p class="text-muted mt-1 mb-0 small ms-xl-5">Delivered</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                            $p+=$subrow['productprice'];
+                            }
+                            ?>
+                            <div class="d-flex justify-content-between pt-2">
+                                <p class="fw-bold mb-0">Order Details</p>
+                                <p class="text-muted mb-0"><span class="fw-bold me-4">Total </span><?php echo number_format($p); ?></p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-5">
+                                <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p>
+                                <p class="text-muted mb-0"><span class="fw-bold me-4">Delivery Charges</span> Free</p>
+                            </div>
+                        </div>
+                        <div class="card-footer border-0 px-4 py-5" style="background-color: #a8729a; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                            <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Total to
+                                pay :  <span class="h2 mb-0 ms-2"><?php echo number_format($p) ?>₹</span></h5>
+                        </div>
                     </div>
-                </article>
-                <div class="track">
-                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
-                    <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
-                    <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
-                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
                 </div>
-                <hr>
-                <ul class="row">
-                    <?php
-                    include("./include/config.php");
-                    $qry="SELECT * FROM orders WHERE status='active' AND userid='".$_SESSION['loginid']."'";
-                    $res=mysqli_query($conn,$qry);
-                    while($row=mysqli_fetch_assoc($res)){
-                        $subqry="SELECT * FROM product WHERE id='".$row['productid']."'";
-                        $subres=mysqli_query($conn,$subqry);
-                        $subrow=mysqli_fetch_assoc($subres);
-?>
-                    <li class="col-md-4">
-                        <figure class="itemside mb-3">
-                            <div class="aside"><img src="./image/product/<?php echo $subrow['productimage'] ?>" class="img-sm border"></div>
-                            <figcaption class="info align-self-center">
-                                <p class="title"><?php echo $subrow['productname']?> <br> </p> <span class="text-muted">₹<?php echo number_format($subrow['productprice'])?></span>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <?php
-                    }
-                    ?>
-                </ul>
-                <hr>
-                <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
             </div>
-        </article>
-    </div>
+        </div>
+    </section>
+    <?php
+    include("./common/footer.php")
+    ?>
 </body>
 
 </html>

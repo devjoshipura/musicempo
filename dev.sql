@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2023 at 03:31 PM
+-- Generation Time: Sep 14, 2023 at 03:58 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -59,7 +59,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`ID`, `productid`, `userid`, `quantity`) VALUES
-(3, 25, 1, 1);
+(5, 19, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -97,6 +97,13 @@ CREATE TABLE `contact` (
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`ID`, `name`, `email`, `subject`, `message`) VALUES
+(4, 'Milan', 'milanbharadva1@gmail.com', 'ffffff', 'mmmmmmmmmmm');
+
 -- --------------------------------------------------------
 
 --
@@ -119,7 +126,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`ID`, `cartid`, `userid`, `productid`, `quantity`, `date`, `address`, `status`) VALUES
-(13, 3, 1, 25, 1, '2023-09-13 01:22:43', 'home', 'active');
+(1, 2, 1, 22, 1, '2023-09-14 13:57:51', 'home', 'delivered'),
+(2, 5, 1, 19, 1, '2023-09-14 01:28:40', 'home', 'active'),
+(3, 5, 1, 19, 1, '2023-09-14 01:33:04', 'jasraj nagar', 'active');
 
 -- --------------------------------------------------------
 
@@ -172,17 +181,19 @@ CREATE TABLE `user` (
   `ID` int(255) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `phone` varchar(110) NOT NULL,
+  `address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ID`, `name`, `email`, `password`) VALUES
-(1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
-(4, 'dev', 'dev@gmail.com', 'e77989ed21758e78331b20e477fc5582'),
-(5, 'Furniture Arena', 'aditi@gmail.com', '2b197829d548512d1d4b8bd5c773d6c3');
+INSERT INTO `user` (`ID`, `name`, `email`, `password`, `phone`, `address`) VALUES
+(1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '79908922778', 'jasraj nagar'),
+(4, 'dev', 'dev@gmail.com', 'e77989ed21758e78331b20e477fc5582', '0', ''),
+(5, 'Furniture Arena', 'aditi@gmail.com', '2b197829d548512d1d4b8bd5c773d6c3', '0', '');
 
 --
 -- Indexes for dumped tables
@@ -244,7 +255,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -256,13 +267,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`

@@ -8,8 +8,11 @@ session_start();
                 <a href="./index.php"><img src="./img/logo2.png" alt=""></a>
             </div>
             <div class="header-right">
-                <img src="img/icons/man.png" alt="">
-                <a href="#">
+                <a href="profile.php" style="margin-right: 15px;">
+
+                    <img src="img/icons/man.png" alt="">
+                </a>
+                <a href="cart.php">
                     <img src="img/icons/bag.png
                     " alt="">
                     <span>2</span>

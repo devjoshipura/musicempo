@@ -95,21 +95,20 @@ error_reporting(E_ERROR | E_PARSE);
                         <div class="cw-item">
                             <h5>Location</h5>
                             <ul>
-                                <li>1525 Awesome Lane, </li>
-                                <li>Los Angeles, CA</li>
+                                <li>Saidham street no.4</li>
+                                <li>Mavdi,rajkot-360004</li>
+                                <li>Gujarat,India</li>
                             </ul>
                         </div>
                         <div class="cw-item">
                             <h5>Phone</h5>
                             <ul>
-                                <li>+1 (603)535-4592</li>
-                                <li>+1 (603)535-4556</li>
+                                <li>+91 9737273157</li>
                             </ul>
                         </div>
                         <div class="cw-item">
                             <h5>E-mail</h5>
                             <ul>
-
                                 <li>www.musicemporium.com</li>
                             </ul>
                         </div>

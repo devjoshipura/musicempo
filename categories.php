@@ -106,14 +106,13 @@
                                 </div>
                             </figure>
                             <div class="product-text">
-                                <a href="#">
+                                <a href="product-page.php?productid=<?php echo $row[0] ?>">
                                     <h6><?php echo $row[1] ?></h6>
+                                    <p>₹<?php echo number_format($row[3]) ?></p>
                                 </a>
-                                <p>₹<?php echo number_format($row[3]) ?></p>
                             </div>
-                            <div style="margin-top: 10px;">
-                                <a href="#" style="color: black; border: 2px solid #D0D7DB;" class="primary-btn pc-btn">Buy Now</a>
-                                <a href="#" style="color: black; border: 2px solid #D0D7DB;" class="primary-btn pc-btn">Add to cart</a>
+                            <div style="margin-top: 10px; text-align: center;">
+                                <a href="addtocart.php?prodid=<?php echo $row[0] ?>" style="color: black; border: 2px solid #D0D7DB;" class="primary-btn pc-btn">Add to cart</a>
                             </div>
                         </div>
                     </div>
