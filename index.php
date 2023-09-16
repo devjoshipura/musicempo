@@ -59,24 +59,49 @@ error_reporting(E_ERROR | E_PARSE);
                     </div>
                 </div>
             </div>
-            <div class="single-slider-item set-bg" data-setbg="img/slider-2.jpg">
+            <div class="single-slider-item set-bg" data-setbg="img/logos/music_guitar_4k_hd_music.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1>MUSIC</h1>
-                            <h2>EMPORIUM</h2>
+                            <h1>GUITAR</h1>
+                            <H2>FAMILY</H2>
+                            
                             <a href="contact.php" class="primary-btn">See More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="single-slider-item set-bg" data-setbg="img/slider-3.jpg">
+            <div class="single-slider-item set-bg" data-setbg="img/logos/wp4135855.webp">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1>MUSIC</h1>
-                            <h2>EMPORIUM</h2>
+                            <h1>KEYBOARD</h1>
+                            <H2>INSTRUMETS</H2>
+                            
                             <a href="contact.php" class="primary-btn">See More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slider-item set-bg" data-setbg="img/logos/thumb-1920-672539.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>WOOD</h1>
+                            <H2>WIND</H2>
+                            
+                            <a href="https://youtu.be/TogShON_wCI" class="primary-btn">See More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slider-item set-bg" data-setbg="img/logos/violin_windows_light_room_details-788373.jpg!d">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>BOWED</h1>
+                            <h2>STRINGS</h2>
+                            <a href="https://youtu.be/q98A5ev9MYY?si=NRuzmMOC3EExSc0U" class="primary-btn">See More</a>
                         </div>
                     </div>
                 </div>
